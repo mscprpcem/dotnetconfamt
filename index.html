@@ -7,46 +7,56 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
- <nav class="navbar">
-  <div class="logo-text">.NET Conf Amravati</div>
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="page-wrapper">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="logo-text">.NET Conf Amravati</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="badges.html">Badge</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="sponsors.html">Sponsors</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="page-content">
+      <div class="container">
+        <img src="https://dotnetconfamravati.blob.core.windows.net/website-images/1.png" 
+             alt=".NET Conf Amravati Banner" class="banner">
+        <h2>Coming Soon</h2>
+
+        <div id="countdown" class="timer">
+          <div><span id="days">00</span>Days</div>
+          <div><span id="hours">00</span>Hours</div>
+          <div><span id="minutes">00</span>Minutes</div>
+          <div><span id="seconds">00</span>Seconds</div>
+        </div>
+
+        <section class="bottom-section">
+          <div class="launch-image">
+            <img src="https://dotnetconfamravati.blob.core.windows.net/website-images/Picture4.png" 
+                 alt="Spaceship" class="rocket">
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <span>Organized by <strong>Microsoft Student Club PRPCEM</strong> & <strong>Global AI Amravati</strong></span>
+        <span><a href="code-of-conduct.html">Code of Conduct</a></span>
+        <span>All rights reserved &copy; 2025</span>
+      </div>
+    </footer>
   </div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="speakers.html">Speakers</a></li>
-    <li><a href="sponsors.html">Sponsors</a></li>
-  </ul>
-</nav>
-
-
-  <!-- Hero Section -->
-  <div class="container">
-    <img src="https://dotnetconfamravati.blob.core.windows.net/website-images/1.png" alt=".NET Conf Amravati Banner" class="banner">
-    <h2>Coming Soon</h2>
-
-    <div id="countdown" class="timer">
-      <div><span id="days">00</span>Days</div>
-      <div><span id="hours">00</span>Hours</div>
-      <div><span id="minutes">00</span>Minutes</div>
-      <div><span id="seconds">00</span>Seconds</div>
-    </div>
-
-   <section class="bottom-section">
-    <div class="launch-image">
-      <!-- 🚀 Spaceship with .NET 10 image -->
-      <img src="https://dotnetconfamravati.blob.core.windows.net/website-images/Picture4.png" alt="Spaceship" class="rocket">
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    Organized by Microsoft Student Club, PRPCEM
-  </footer>
 
   <script src="script.js"></script>
 </body>
