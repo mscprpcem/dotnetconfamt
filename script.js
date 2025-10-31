@@ -45,7 +45,7 @@ const uploadBtn = document.getElementById("uploadBtn");
   // 🧩 Load the frame overlay
   const frame = new Image();
   frame.crossOrigin = "anonymous"; // Prevent CORS issues for canvas export
-  frame.src = "./images/frame.png";
+  frame.src = "https://dotnetconfamravati.blob.core.windows.net/website-images/frame.png";
 
   // Draw default frame when loaded
   frame.onload = () => drawBadge();
