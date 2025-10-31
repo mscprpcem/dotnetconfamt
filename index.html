@@ -1,59 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>.NET Conf Amravati - Coming Soon</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="page-wrapper">
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="logo-text">.NET Conf Amravati</div>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+  <head>
+    <title>.NET Conference Amravati</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+      type="image/png"
+      rel="shortcut icon"
+      href="/images/favicon.xk5b5xt0yb.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/1.css" />
+    
+    
+    
+    <script type="module" src="/js/navbar.0lv65fg883.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VET0MSHQ4S"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-VET0MSHQ4S");
+    </script>
+    <script
+      type="text/javascript"
+      src="https://addevent.com/libs/atc/1.6.1/atc.min.js"
+      async
+      defer
+    ></script>
+    <!-- AddEvent Settings -->
+    <script type="text/javascript">
+      window.addeventasync = function () {
+        addeventatc.settings({
+          license: "acoMDqfiQzhMlydTWmIo46912",
+          css: false,
+        });
+        addeventatc.register("button-dropdown-click", function (obj) {
+          ga("send", "event", "SaveDate", "click", "v2021");
+        });
+      };
+    </script>
+
+    <script>
+      const eventDate = new Date("2025-12-18T09:00:00").getTime();
+
+      const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").textContent = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds
+          .toString()
+          .padStart(2, "0");
+
+        if (distance < 0) {
+          clearInterval(timer);
+          document.querySelector(".countdown").innerHTML =
+            "<h3>Event Started!</h3>";
+        }
+      }, 1000);
+    </script>
+  </head>
+  <body>
+    <div class="overflow-container">
+      <header class="navbar">
+        <a class="navbar-title" href="/">.NET Conf 2025</a>
+
+        <button
+          id="navbar-menu-btn"
+          class="navbar-menu-icon-btn"
+          aria-label="Toggle menu"
+        >
+          <svg
+            id="hamburger-icon"
+            width="30"
+            height="22"
+            viewBox="0 0 30 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 3H27"
+              stroke="#00f5c9"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M3 11H27"
+              stroke="#00f5c9"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M3 19H27"
+              stroke="#00f5c9"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <nav id="navbar-links">
+          <ul class="navbar-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="badge.html" >Badge</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+          </ul>
+        </nav>
+
+        <div id="menu-overlay"></div>
+      </header>
+
+      <main>
+        <section class="hero grid vertical-gap">
+  <div class="hero-text">
+    <h1 class="font-display-2 negative-margin">.NET Conf 2025</h1>
+    <p class="font-hero-subtitle">
+      Coming soon <span class="hero-date">....</span>
+    </p>
+
+    <div class="countdown">
+      <div class="time-box">
+        <span id="days">00</span>
+        <p>Days</p>
       </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="badges.html">Badge</a></li>
-        <li><a href="speakers.html">Speakers</a></li>
-        <li><a href="sponsors.html">Sponsors</a></li>
-      </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="page-content">
-      <div class="container">
-        <img src="https://dotnetconfamravati.blob.core.windows.net/website-images/1.png" 
-             alt=".NET Conf Amravati Banner" class="banner">
-        <h2>Coming Soon</h2>
-
-        <div id="countdown" class="timer">
-          <div><span id="days">00</span>Days</div>
-          <div><span id="hours">00</span>Hours</div>
-          <div><span id="minutes">00</span>Minutes</div>
-          <div><span id="seconds">00</span>Seconds</div>
-        </div>
-
-
+      <div class="time-box">
+        <span id="hours">00</span>
+        <p>Hours</p>
       </div>
-     
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-content">
-        <span>Organized by <strong>Microsoft Student Club PRPCEM</strong> & <strong>Global AI Amravati</strong></span>
-        <span><a href="code-of-conduct.html">Code of Conduct</a></span>
-        <span>All rights reserved &copy; 2025</span>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <p>Minutes</p>
       </div>
-    </footer>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <p>Seconds</p>
+      </div>
+    </div>
+
+    <!-- Buttons directly below the countdown -->
+    <div class="hero-buttons">
+      <a href="" class="btn-primary">Registration Soon</a>
+      <a href="https://sessionize.com/net-conf-2025-amravati1/" 
+   class="btn-outline" 
+   target="_blank" 
+   rel="noopener noreferrer">
+   Call for Speakers
+</a>
+
+    </div>
   </div>
 
-  <script src="script.js"></script>
-</body>
+  <div class="hero-image-box">
+    <img role="presentation" src="/images/Picture2.png" alt=".NET 10" />
+  </div>
+</section>
+
+
+        
+
+
+
+        <section class="about-section">
+          <div class="about-content">
+            <h2>About .NET Conference Amravati 2025</h2>
+            <p>
+              .NET Conference Amravati 2025 is Central India’s largest regional
+              developer conference dedicated to the Microsoft .NET ecosystem.
+              Organized by the Microsoft Student Club, PRPCEM, this three-day
+              event brings together students, developers, IT professionals, and
+              industry experts to explore the latest innovations in .NET, Azure,
+              and AI-powered development.
+            </p>
+            <p>
+              The conference serves as a local extension of the global .NET Conf
+              by Microsoft, providing hands-on sessions, speaker keynotes,
+              technical workshops, and networking opportunities for the
+              developer community.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer-full-bleed">
+        <p>Organized by Microsoft Student Club, PRPCEM</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

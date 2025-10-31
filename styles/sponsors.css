@@ -1,0 +1,230 @@
+/* =========================================
+   🌟 .NET Conf Amravati - Sponsors Page Style
+   ========================================= */
+
+/* Global Font Setup */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Space+Grotesk:wght@700&display=swap");
+
+/* Base Colors */
+:root {
+  --bg-dark: #0a0f12;
+  --bg-light: #0b1216;
+  --accent: #00f5c9;
+  --accent-dark: #00bfa6;
+  --text-light: #e5e5e5;
+  --text-muted: #cfd8dc;
+}
+
+/* Sponsor Intro Section */
+.sponsors-section {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 90px 20px;
+  border-top: 1px solid rgba(0, 245, 201, 0.1);
+  background: radial-gradient(circle at 50% 20%, rgba(0, 245, 201, 0.05), transparent 60%);
+}
+
+.sponsors-section h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.6rem;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(0, 245, 201, 0.4);
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.sponsor-desc {
+  font-family: "Open Sans", sans-serif;
+  max-width: 850px;
+  margin: 0 auto 50px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.sponsor-desc strong {
+  color: var(--accent);
+}
+
+/* Highlights Box */
+.sponsor-highlights {
+  background: rgba(0, 245, 201, 0.05);
+  border: 1px solid rgba(0, 245, 201, 0.15);
+  box-shadow: 0 0 20px rgba(0, 245, 201, 0.05);
+  border-radius: 14px;
+  display: inline-block;
+  text-align: left;
+  padding: 35px 40px;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  backdrop-filter: blur(6px);
+}
+
+.sponsor-highlights p {
+  margin: 12px 0;
+  font-size: 1rem;
+  color: #d8e8e8;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sponsor-highlights p:hover {
+  color: var(--accent);
+  transform: translateX(6px);
+}
+
+/* Call To Action */
+.sponsor-cta p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.sponsor-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: var(--bg-dark);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 36px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 245, 201, 0.4);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.sponsor-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 40px rgba(0, 245, 201, 0.6);
+  background: linear-gradient(90deg, var(--accent-dark) 0%, var(--accent) 100%);
+}
+
+/* ======================================================
+   🏅 Sponsor Tiers Section
+   ====================================================== */
+/* 🌐 Sponsor Section Styling */
+.sponsor-tiers {
+  background: radial-gradient(circle at top, #0a0f12, #06090b);
+  color: #e5e5e5;
+  text-align: center;
+  padding: 100px 20px;
+  border-top: 1px solid rgba(0, 245, 201, 0.15);
+  font-family: "Poppins", sans-serif;
+}
+
+.sponsor-tiers h2 {
+  font-size: 2.8rem;
+  color: #00f5c9;
+  text-shadow: 0 0 20px rgba(0, 245, 201, 0.5);
+  margin-bottom: 70px;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.sponsor-tiers h2::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 3px;
+  background: linear-gradient(90deg, #00f5c9, #00bfa6);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0, 245, 201, 0.5);
+}
+
+/* 💎 Tier Block */
+.tier {
+  margin-bottom: 80px;
+  animation: fadeUp 1s ease-in-out both;
+}
+
+.tier-title {
+  font-size: 1.8rem;
+  color: #00f5c9;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 245, 201, 0.5);
+  position: relative;
+}
+
+
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sponsor-logos a {
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sponsor-logos img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  filter: brightness(0.85) contrast(1.1);
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 245, 201, 0.1);
+  box-shadow: 0 0 15px rgba(0, 245, 201, 0.05);
+}
+
+.sponsor-logos img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+  box-shadow: 0 0 25px rgba(0, 245, 201, 0.4);
+  background: rgba(0, 245, 201, 0.05);
+}
+
+/* ✨ Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .sponsor-tiers {
+    padding: 70px 20px;
+  }
+
+  .sponsor-tiers h2 {
+    font-size: 2.2rem;
+  }
+
+  .tier-title {
+    font-size: 1.4rem;
+  }
+
+  .sponsor-logos {
+    gap: 30px;
+  }
+
+  .sponsor-logos img {
+    height: 70px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-logos img {
+    height: 55px;
+  }
+}

@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sponsors - .NET Conf Amravati</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<nav class="navbar">
-  <div class="logo-text">.NET Conf Amravati</div>
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="badges.html">Badge</a></li>
-    <li><a href="speakers.html" class="active">Speakers</a></li>
-    <li><a href="sponsors.html">Sponsors</a></li>
-  </ul>
-</nav>
+  <head>
+    <title>Sponsors | .NET Conference Amravati</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link type="image/png" rel="shortcut icon" href="/images/favicon.xk5b5xt0yb.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/coming.css" />
+    <link rel="stylesheet" href="/styles/1.css" />
+    <link rel="stylesheet" href="/styles/sponsors.css" />
+  </head>
 
-  <section class="sponsors-section">
-    <h2>Partner with .NET Conf Amravati</h2>
+  <body>
+    <div class="overflow-container">
+      <!-- NAVBAR -->
+      <header class="navbar">
+        <a class="navbar-title" href="/">.NET Conf 2025</a>
+
+        <button id="navbar-menu-btn" class="navbar-menu-icon-btn" aria-label="Toggle menu">
+          <svg id="hamburger-icon" width="30" height="22" viewBox="0 0 30 22" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3H27" stroke="#00f5c9" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M3 11H27" stroke="#00f5c9" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M3 19H27" stroke="#00f5c9" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <nav id="navbar-links">
+          <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="badge.html" >Badge</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="sponsors.html" class="active">Sponsors</a></li>
+          </ul>
+        </nav>
+        <div id="menu-overlay"></div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main>
+        <section class="sponsors-section">
+    <h2>Partner with .NET Conference Amravati</h2>
     <p class="sponsor-desc">
       Join us in empowering the next generation of developers and innovators.  
       <br><br>
-      <strong>.NET Conf Amravati</strong> brings together <strong>250–500 developers, tech enthusiasts, and industry professionals</strong>  
+      <strong>.NET Conference Amravati</strong> brings together <strong>250–500 developers, tech enthusiasts, and industry professionals</strong>  
       from across Central India for a full day of learning, innovation, and networking.
     </p>
 
@@ -48,7 +70,62 @@
 
   
 
-<script src="script.js"></script>
+      </main>
 
-</body>
+     <section class="sponsor-tiers">
+  <h2>Our Sponsors & Partners</h2>
+
+  <!-- Diamond Sponsor -->
+  <div class="tier">
+    <h3 class="tier-title">Title Sponsor</h3>
+    <div class="sponsor-logos single">
+      <img src="./images/Sponsor/microsoft.png" alt="Microsoft" />
+    </div>
+  </div>
+
+  <!-- In kind Support -->
+    <div class="tier">
+    <h3 class="tier-title">In Kind Support</h3>
+    <div class="sponsor-logos single">
+      <img src="./images/Sponsor/jetbrains-mono-white.png" alt="Jetbrains" />
+      <img src="./images/Sponsor/azure.png" alt="Microsoft-Azure-Logo" />
+    </div>
+  </div>
+
+    <!-- Community Partner -->
+  <div class="tier">
+    <h3 class="tier-title">Community Partner</h3>
+    <div class="sponsor-logos single">
+      <img src="./images/Sponsor/global-AI-community-semi-white.png" alt="Global AI Community" />
+    </div>
+  </div>
+
+ <!-- CFP Partner -->
+  <div class="tier">
+    <h3 class="tier-title">CFP Partner</h3>
+    <div class="sponsor-logos single">
+      <img src="./images/Sponsor/sessionize-logo-invert.png" alt="Sessionize" />
+    </div>
+  </div>
+
+   <!-- Ticket Partner -->
+  <div class="tier">
+    <h3 class="tier-title">Ticket Partner</h3>
+    <div class="sponsor-logos single">
+      <img src="./images/Sponsor/konfhub Blue logo@2x.png" alt="KonfHub" />
+    </div>
+  </div>
+
+  </div>
+</section>
+
+
+      <!-- FOOTER -->
+      <footer class="footer-full-bleed">
+        <p>Organized by Microsoft Student Club, PRPCEM</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

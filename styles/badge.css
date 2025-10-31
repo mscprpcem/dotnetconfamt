@@ -1,0 +1,287 @@
+/* === Container === */
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #0a0f0f;
+  border: 1px solid #00f5c9;
+  border-radius: 25px;
+  padding: 50px;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 80px auto;
+  box-shadow: 0 0 20px rgba(0, 245, 201, 0.15);
+  flex-wrap: wrap;
+  color: #e0e0e0;
+}
+
+/* === Left Section === */
+.left {
+  flex: 1 1 420px;
+}
+
+.left h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #00f5c9;
+  margin-bottom: 10px;
+}
+
+.left .desc {
+  color: #b0b0b0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* === Upload + Download Buttons === */
+.upload-btn,
+#downloadBtn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #00f5c9, #00796b);
+  border: none;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  color: #000;
+}
+
+.upload-btn:hover,
+#downloadBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 245, 201, 0.6);
+}
+
+#downloadBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* === Shape Buttons === */
+.shape-options {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.shape-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #00f5c9;
+  font-weight: 600;
+  border-radius: 40px;
+  background-color: transparent;
+  color: #00f5c9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shape-btn.active,
+.shape-btn:hover {
+  background-color: #00f5c9;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 245, 201, 0.6);
+}
+
+/* === Share Section === */
+.share-section {
+  margin-top: 30px;
+}
+
+.share-section span {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+  color: #00f5c9;
+}
+
+.share-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.share-icons a svg {
+  width: 28px;
+  height: 28px;
+  fill: #b0b0b0;
+  transition: fill 0.3s ease;
+}
+
+.share-icons a:hover svg {
+  fill: #00f5c9;
+}
+
+/* === Note === */
+.note {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* === Right Section (Canvas) === */
+.right {
+  flex: 1 1 400px;
+  background-color: #0d1212;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 245, 201, 0.15);
+}
+
+#canvas {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  background-color: #101616;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 245, 201, 0.15);
+}
+
+/* === Remove Button (X) === */
+#removeBtn {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+
+
+#removeBtn:hover {
+  background: #d50000;
+}
+
+.share-icons a svg {
+  width: 28px;
+  height: 28px;
+  fill: #ccc; /* Default gray color */
+  transition: fill 0.3s ease;
+}
+
+/* Hover Colors */
+.share-icons a#linkedinShare:hover svg {
+  fill: #0077b5; /* LinkedIn Blue */
+}
+
+.share-icons a#twitterShare:hover svg {
+  fill: #1da1f2; /* X (Twitter) Blue */
+}
+
+.share-icons a#instagramShare:hover svg {
+  fill: #e4405f; /* Instagram Pinkish Red */
+}
+
+
+/* === Responsive === */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .container1 {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .left h1 {
+    font-size: 2rem;
+  }
+
+  .upload-btn,
+  #downloadBtn {
+    width: 80%;
+    margin: 0 auto 25px auto;
+  }
+
+  .shape-options {
+    justify-content: center;
+  }
+}
+
+/* Small Screens (Phones) */
+@media (max-width: 768px) {
+  .container1 {
+    margin: 40px 20px;
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .left h1 {
+    font-size: 1.8rem;
+  }
+
+  .left .desc {
+    font-size: 0.95rem;
+  }
+
+  .upload-btn,
+  #downloadBtn {
+    font-size: 1rem;
+    padding: 14px;
+    width: 100%;
+  }
+
+  .right {
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  #canvas {
+    max-width: 320px;
+  }
+}
+
+/* Extra Small (Very narrow phones) */
+@media (max-width: 480px) {
+  .container1 {
+    padding: 20px;
+  }
+
+  .left h1 {
+    font-size: 1.6rem;
+  }
+
+  .shape-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .share-icons {
+    justify-content: center;
+  }
+
+  #canvas {
+    max-width: 280px;
+  }
+
+  #removeBtn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+}

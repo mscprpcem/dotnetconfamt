@@ -1,44 +1,32 @@
-// Countdown Timer (if exists on page)
-const countdownElement = document.getElementById("countdown");
-if (countdownElement) {
-  const targetDate = new Date("2025-12-18T09:00:00").getTime();
-  const countdown = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+const menuBtn = document.getElementById("navbar-menu-btn");
+      const nav = document.getElementById("navbar-links");
+      const icon = document.getElementById("hamburger-icon");
+      const overlay = document.getElementById("menu-overlay");
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      menuBtn.addEventListener("click", () => {
+        const isActive = nav.classList.toggle("active");
+        icon.classList.toggle("open", isActive);
+        overlay.classList.toggle("active", isActive);
+      });
 
-    document.getElementById("days").innerText = days.toString().padStart(2, '0');
-    document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-    document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-    document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+      overlay.addEventListener("click", () => {
+        nav.classList.remove("active");
+        icon.classList.remove("open");
+        overlay.classList.remove("active");
+      });
 
-    if (distance < 0) {
-      clearInterval(countdown);
-      countdownElement.innerHTML = "The event has started!";
-    }
-  }, 1000);
-}
-
-// Hamburger Menu Toggle
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-if (hamburger && navLinks) {
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("show");
-    document.body.classList.toggle("menu-open");
-  });
-}
+      document.querySelectorAll(".navbar-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+          icon.classList.remove("open");
+          overlay.classList.remove("active");
+        });
+      });
 
 
-// Badge
- // 🎯 Get all necessary DOM elements
-  const uploadBtn = document.getElementById("uploadBtn");
+
+
+const uploadBtn = document.getElementById("uploadBtn");
   const uploadInput = document.getElementById("upload");
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
@@ -57,7 +45,7 @@ if (hamburger && navLinks) {
   // 🧩 Load the frame overlay
   const frame = new Image();
   frame.crossOrigin = "anonymous"; // Prevent CORS issues for canvas export
-  frame.src = "./assets/frame.png";
+  frame.src = "./images/frame.png";
 
   // Draw default frame when loaded
   frame.onload = () => drawBadge();
@@ -160,6 +148,5 @@ if (hamburger && navLinks) {
       alert("Sharing not supported on this device/browser.");
     }
   });
+  
 
-
- 

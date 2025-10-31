@@ -1,0 +1,89 @@
+    :root {
+  --bg-color: #0a0f14;
+  --accent-color: #00f5c9;
+  --text-color: #e5f7f4;
+  --gradient: linear-gradient(90deg, #00f5c9, #0079ff);
+}
+
+/* Global structure */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg-color);
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.overflow-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Coming Soon Section === */
+.coming-soon-section {
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.coming-soon-section h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.5rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.coming-soon-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00f5c9, 0 0 20px #00f5c9, 0 0 30px #0079ff;
+  }
+  to {
+    text-shadow: 0 0 20px #00f5c9, 0 0 40px #0079ff, 0 0 60px #00f5c9;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Footer === */
+.footer-full-bleed {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  color: #a9b9b6;
+  background: rgba(10, 15, 20, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0, 245, 201, 0.15);
+  margin-top: auto;
+}
+
+
