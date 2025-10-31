@@ -24,129 +24,133 @@ const menuBtn = document.getElementById("navbar-menu-btn");
       });
 
 
-
-
+// === Element References ===
 const uploadBtn = document.getElementById("uploadBtn");
-  const uploadInput = document.getElementById("upload");
-  const canvas = document.getElementById("canvas");
-  const ctx = canvas.getContext("2d");
-  const downloadBtn = document.getElementById("downloadBtn");
-  const removeBtn = document.getElementById("removeBtn");
-  const shapeBtns = document.querySelectorAll(".shape-btn");
+const uploadInput = document.getElementById("upload");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const downloadBtn = document.getElementById("downloadBtn");
+const removeBtn = document.getElementById("removeBtn");
+const shapeBtns = document.querySelectorAll(".shape-btn");
 
-  const linkedinShare = document.getElementById("linkedinShare");
-  const twitterShare = document.getElementById("twitterShare");
-  const instagramShare = document.getElementById("instagramShare");
+// === Frame URL ===
+const frameURL = "./image/frame.png";
 
-  // 🖼️ Initialize variables
-  let uploadedImg = null;
-  let shape = "square";
+// === Variables ===
+let uploadedImage = null;
+let currentShape = "square"; // Default shape
+let frameImage = new Image();
+frameImage.src = frameURL;
 
-  // 🧩 Load the frame overlay
-  const frame = new Image();
-  frame.crossOrigin = "anonymous"; // Prevent CORS issues for canvas export
-  frame.src = "https://dotnetconfamravati.blob.core.windows.net/website-images/frame.png";
+// === Function to Draw Badge ===
+function drawBadge() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Draw default frame when loaded
-  frame.onload = () => drawBadge();
+  const padding = 10; 
+  const size = canvas.width - padding * 2;
+  const x = padding;
+  const y = padding;
 
-  // 📤 Handle Upload Button
-  uploadBtn.addEventListener("click", () => uploadInput.click());
+  // Draw background
+  ctx.fillStyle = "#0a0f0f";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // 📸 Handle Image Upload
-  uploadInput.addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      uploadedImg = new Image();
-      uploadedImg.onload = drawBadge;
-      uploadedImg.src = event.target.result;
-    };
-    reader.readAsDataURL(file);
-
-    removeBtn.style.display = "block";
-  });
-
-  // ❌ Remove Uploaded Image
-  removeBtn.addEventListener("click", () => {
-    uploadedImg = null;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBadge();
-    downloadBtn.disabled = true;
-    uploadInput.value = "";
-    removeBtn.style.display = "none";
-  });
-
-  // ⚙️ Shape Selector (Square / Circle)
-  shapeBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      shapeBtns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      shape = btn.dataset.shape;
-      drawBadge();
-    });
-  });
-
-  // 🧠 Main Drawing Function
-  function drawBadge() {
-    const size = canvas.width;
-    ctx.clearRect(0, 0, size, size);
+  // Create circular mask for both image and frame if needed
+  if (currentShape === "circle") {
     ctx.save();
-
-    // Apply circular clipping if needed
-    if (shape === "circle") {
-      ctx.beginPath();
-      ctx.arc(size / 2, size / 2, size / 2 - 10, 0, Math.PI * 2);
-      ctx.clip();
-    }
-
-    // Draw uploaded image if available
-    if (uploadedImg) {
-      ctx.drawImage(uploadedImg, 0, 0, size, size);
-    }
-
-    // Draw badge frame
-    ctx.drawImage(frame, 0, 0, size, size);
-
-    ctx.restore();
-    downloadBtn.disabled = false;
+    ctx.beginPath();
+    ctx.arc(canvas.width / 2, canvas.height / 2, size / 2, 0, Math.PI * 2);
+    ctx.closePath();
+    ctx.clip();
   }
 
-  // 💾 Download the badge as PNG
-  downloadBtn.addEventListener("click", () => {
-    const link = document.createElement("a");
-    link.download = "dotnetconf-badge.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-  });
+  // Draw uploaded image
+  if (uploadedImage) {
+    drawImageCover(uploadedImage, x, y, size, size);
+  }
 
-  // 🔗 Social Share Links
-  const registrationLink = "https://dotnetconfamravati.com/register";
-  const message = encodeURIComponent(
-    "I'm attending .NET Conf Amravati! 🎉 Join me here 👉 " + registrationLink
-  );
+  // Draw frame (inside clip if circular)
+  ctx.drawImage(frameImage, 0, 0, canvas.width, canvas.height);
 
-  linkedinShare.href = `https://www.linkedin.com/sharing/share-offsite/?url=${registrationLink}`;
-  twitterShare.href = `https://twitter.com/intent/tweet?text=${message}`;
-  instagramShare.href = `https://www.instagram.com/`;
+  // Restore context if circular mask was applied
+  if (currentShape === "circle") {
+    ctx.restore();
+  }
+}
 
-    const shareData = {
-    title: '.NET Conf Amravati',
-    text: "I'm attending .NET Conf Amravati! 🎉 Join me 👉 https://dotnetconfamravati.com/register",
-    files: []
+// === Utility: Cover-fit like CSS background-size: cover ===
+function drawImageCover(img, x, y, w, h) {
+  const imgRatio = img.width / img.height;
+  const canvasRatio = w / h;
+
+  let drawWidth = w;
+  let drawHeight = h;
+  let offsetX = x;
+  let offsetY = y;
+
+  if (imgRatio > canvasRatio) {
+    drawHeight = h;
+    drawWidth = img.width * (h / img.height);
+    offsetX = x - (drawWidth - w) / 2;
+  } else {
+    drawWidth = w;
+    drawHeight = img.height * (w / img.width);
+    offsetY = y - (drawHeight - h) / 2;
+  }
+
+  ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+}
+
+// === Upload Button Click ===
+uploadBtn.addEventListener("click", () => uploadInput.click());
+
+// === Handle Image Upload ===
+uploadInput.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    uploadedImage = new Image();
+    uploadedImage.onload = () => {
+      drawBadge();
+      downloadBtn.disabled = false;
+      removeBtn.style.display = "block";
+    };
+    uploadedImage.src = event.target.result;
   };
+  reader.readAsDataURL(file);
+});
 
-  document.getElementById("shareBtn").addEventListener("click", async () => {
-    if (navigator.share) {
-      const blob = await (await fetch(canvas.toDataURL())).blob();
-      const file = new File([blob], "dotnetconf-badge.png", { type: "image/png" });
-      shareData.files = [file];
-      await navigator.share(shareData);
-    } else {
-      alert("Sharing not supported on this device/browser.");
-    }
+// === Shape Button Logic ===
+shapeBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    shapeBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    currentShape = btn.dataset.shape;
+    drawBadge();
   });
-  
+});
 
+// === Download Badge ===
+downloadBtn.addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.download = `dotnetconf_badge_${currentShape}.png`;
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+});
+
+
+
+// === Remove Image ===
+removeBtn.addEventListener("click", () => {
+  uploadedImage = null;
+  uploadInput.value = "";
+  downloadBtn.disabled = true;
+  removeBtn.style.display = "none";
+  drawBadge();
+});
+
+// === Draw Default Frame on Load ===
+frameImage.onload = () => drawBadge();
