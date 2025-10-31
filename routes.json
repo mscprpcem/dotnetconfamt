@@ -1,0 +1,8 @@
+{
+  "routes": [
+    { "route": "/gallery", "rewrite": "/gallery.html" },
+    { "route": "/speakers", "rewrite": "/speakers.html" },
+    { "route": "/sponsors", "rewrite": "/sponsors.html" },
+    { "route": "/badge", "rewrite": "/badge.html" }
+  ]
+}
