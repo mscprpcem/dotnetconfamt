@@ -190,6 +190,22 @@ body {
   }
 }
 
+/* === 2x2 layout for very small screens (below 500px) === */
+@media (max-width: 500px) {
+  .countdown {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-items: center;
+  }
+
+  .time-box {
+    width: 100px;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+}
+
 
 /* === Hero Section === */
 .hero {
@@ -212,7 +228,7 @@ body {
 
 .hero-text p {
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: var(--muted-text);
 }
 
@@ -258,7 +274,7 @@ body {
   justify-content: flex-start; 
   align-items: center;
   gap: 1.2rem;
-  margin-top: 1.8rem;
+  margin-top: 3rem;
   flex-wrap: wrap;
 }
 
