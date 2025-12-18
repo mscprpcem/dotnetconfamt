@@ -203,11 +203,6 @@
   align-items: center;
 }
 
-/* Consistent logo size */
-.sponsor-logos img {
-  height: 60px;
-  object-fit: contain;
-}
 
 
 /* ✨ Animations */
@@ -318,4 +313,23 @@
   font-weight: bold;
   margin-bottom: 10px;
   font-size: 1.1rem;
+}
+
+
+/* ===============================
+   In-Kind Support – Layout Fix
+   =============================== */
+
+.inkind-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inkind-bottom {
+  justify-content: center;
+}
+
+.inkind-bottom img {
+  height: 60px;
 }
