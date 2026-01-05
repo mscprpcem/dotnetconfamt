@@ -5,7 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="icon" type="image/png" href="https://dotnetconfamravati.blob.core.windows.net/website-images/favicon.xk5b5xt0yb.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://dotnetconfamravati.blob.core.windows.net/website-images/favicon.xk5b5xt0yb.png"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,7 +18,6 @@
     />
     <link rel="stylesheet" href="/styles/speakers.css" />
     <link rel="stylesheet" href="/styles/1.css" />
-    
   </head>
 
   <body>
@@ -23,24 +26,50 @@
       <header class="navbar">
         <a class="navbar-title" href="/">.NET Conf 2025</a>
 
-        <button id="navbar-menu-btn" class="navbar-menu-icon-btn" aria-label="Toggle menu">
-          <svg id="hamburger-icon" width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 3H27" stroke="#00f5c9" stroke-width="2.5" stroke-linecap="round" />
-            <path d="M3 11H27" stroke="#00f5c9" stroke-width="2.5" stroke-linecap="round" />
-            <path d="M3 19H27" stroke="#00f5c9" stroke-width="2.5" stroke-linecap="round" />
+        <button
+          id="navbar-menu-btn"
+          class="navbar-menu-icon-btn"
+          aria-label="Toggle menu"
+        >
+          <svg
+            id="hamburger-icon"
+            width="30"
+            height="22"
+            viewBox="0 0 30 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 3H27"
+              stroke="#00f5c9"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M3 11H27"
+              stroke="#00f5c9"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M3 19H27"
+              stroke="#00f5c9"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
           </svg>
         </button>
 
-       <nav id="navbar-links">
-      <ul class="navbar-links">
-         <li><a href="/">Home</a></li>
-         <li><a href="/gallery">Gallery</a></li>
-         <li><a href="/badge">Badge</a></li>
-         <li><a href="/speakers" class="active">Speakers</a></li>
-          <li><a href="/sponsors">Sponsors</a></li>
-          <li><a href="/faq.html">FAQ</a></li>
-      </ul>
-      </nav>
+        <nav id="navbar-links">
+          <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/badge">Badge</a></li>
+            <li><a href="/speakers" class="active">Speakers</a></li>
+            <li><a href="/sponsors">Sponsors</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+          </ul>
+        </nav>
 
         <div id="menu-overlay"></div>
       </header>
@@ -50,12 +79,15 @@
         <div class="container2">
           <h1>Speakers</h1>
           <p class="intro-text">
-            Our speakers include Microsoft employees, Microsoft MVPs, MCTs, and industry leaders who are 
-            influential voices in the tech ecosystem. They are passionate community advocates and thought leaders,
-            actively driving innovation and inclusion within their organizations, cities, and countries. Through their expertise 
-            and impactful contributions, they continue to inspire and empower the next generation of technology professionals.
+            Our speakers include Microsoft employees, Microsoft MVPs, MCTs, and
+            industry leaders who are influential voices in the tech ecosystem.
+            They are passionate community advocates and thought leaders,
+            actively driving innovation and inclusion within their
+            organizations, cities, and countries. Through their expertise and
+            impactful contributions, they continue to inspire and empower the
+            next generation of technology professionals.
           </p>
-          
+
           <div id="speakerCTA"></div>
 
           <h2>This Year’s Speakers</h2>
@@ -70,7 +102,12 @@
           <div class="modal-content">
             <button class="close-btn" id="closeModal">&times;</button>
             <div class="modal-header">
-              <img src="" alt="Speaker Image" class="modal-image" id="modalImage" />
+              <img
+                src=""
+                alt="Speaker Image"
+                class="modal-image"
+                id="modalImage"
+              />
               <div class="modal-title-section">
                 <h3 id="modalName"></h3>
                 <p class="speaker-title" id="modalTitle"></p>
@@ -87,127 +124,159 @@
       </footer>
     </div>
 
-   
- <script>
+    <script>
+      // const speakerCTA = {
+      //   title: "Are you a potential speaker?",
+      //   subtitle: "Submit your session now on Sessionize:",
+      //   link: "https://sessionize.com/net-conf-2025-amravati1/"
+      // };
 
+      // const ctaContainer = document.getElementById("speakerCTA");
+      // ctaContainer.innerHTML = `
+      //   <div class="speaker-cta">
+      //     <h2>${speakerCTA.title}</h2>
+      //     <p>${speakerCTA.subtitle}</p>
+      //     <a href="${speakerCTA.link}" target="_blank" class="sessionize-btn">Submit Session</a>
+      //   </div>
+      // `;
 
-// const speakerCTA = {
-//   title: "Are you a potential speaker?",
-//   subtitle: "Submit your session now on Sessionize:",
-//   link: "https://sessionize.com/net-conf-2025-amravati1/"
-// };
+      const currentSpeakers = [
+        {
+          name: "Madhava Ganesh",
+          title: "Senior Consultant",
+          company: "Microsoft",
+          image:
+            "/image/Madhava.jpeg",
+          description:
+            "AI-first Senior Technical Consultant with 11+ years of experience, recognized for building strong relationships with customers, cross-functional teams, and stakeholders. Specialized in developing intelligent bots and automating business processes using LLMs, RAG, Microsoft Agent Framework, LangGraph, LangChain, and OpenAI. Proven leader in driving digital transformation through custom Copilot solutions and advanced data governance. Adept at delivering innovative, AI-powered solutions that optimize efficiency and business outcomes.",
+        },
+        {
+          name: "Kshitiz Kalra",
+          title: "Consultant",
+          company: "Microsoft",
+          image:
+            "/image/Kshitiz.jpeg",
+          description:
+            "Kshitiz is an impact-driven developer and one of the youngest recipients of the Microsoft Platinum Club Award. A GenZ leader in the cloud space, they specialize in the end-to-end execution of Azure, Agentic AI, and Microsoft Centric solutions. Known for technical precision and a customer-first lens, Kshitiz is redefining enterprise digital transformation for the modern era.",
+        },
+        {
+          name: "Tushar Sakhare",
+          title: "Associate Manager",
+          company: "Accenture",
+          image:
+            "/image/Tushar.jpeg",
+          description:
+            "14+ years diverse experience in the Microsoft stack (Copilot Studio, Power Platform, SharePoint & Azure AI).AI enthusiast having a lots of experience in Copilot Studio AI agents with Azure AI services integrations.12+ Microsoft Certifications  and still learning… Co-founder of Nagpur Tech Community ",
+        },
+      ];
 
-// const ctaContainer = document.getElementById("speakerCTA");
-// ctaContainer.innerHTML = `
-//   <div class="speaker-cta">
-//     <h2>${speakerCTA.title}</h2>
-//     <p>${speakerCTA.subtitle}</p>
-//     <a href="${speakerCTA.link}" target="_blank" class="sessionize-btn">Submit Session</a>
-//   </div>
-// `;
+      const previousSpeakers = [
+        {
+          name: "Lakshit Pant",
+          title: "Program Manager",
+          company: "Microsoft",
+          image:
+            "https://dotnetconfamravati.blob.core.windows.net/website-images/lakshit%20pant.png",
+          description:
+            "Lakshit Pant contributes to building innovative cloud solutions and empowering communities through Microsoft programs.",
+        },
+        {
+          name: "Aditya Saladi",
+          title: "Software Engineer 2 ",
+          company: "Microsoft",
+          image:
+            "https://dotnetconfamravati.blob.core.windows.net/website-images/aditya%20saladi.png",
+          description:
+            "Aditya Saladi is a Software Engineer at Microsoft, focused on building scalable, reliable software and leading impactful enterprise projects globally.",
+        },
+        {
+          name: "Anuraj P",
+          title: "Microsoft MVP| Senior Architect",
+          company: "Gadgeon Systems Inc.",
+          image:
+            "https://dotnetconfamravati.blob.core.windows.net/website-images/anuraj%20p.png",
+          description:
+            "Anuraj Parameswaran is a Senior Architect at Gadgeon Systems Inc., specializing in designing scalable, secure, and resilient software solutions that drive innovation and align with business goals.",
+        },
+        {
+          name: "Praffull",
+          title: "Co-founder| Developer| Trainer",
+          company: "SohamGlobal",
+          image:
+            "https://dotnetconfamravati.blob.core.windows.net/website-images/prafull.png",
+          description:
+            "Praffull Wankhade is the Co-Founder of Soham Global, a Microsoft and AWS partner company with over 16 years of experience in software development, enterprise training, and technology innovation.",
+        },
+        {
+          name: "Ritish Venkat J",
+          title: "Sr Full Stack & Data Engineer",
+          company: "Blend",
+          image:
+            "https://dotnetconfamravati.blob.core.windows.net/website-images/ritish%20venkat%20j.png",
+          description:
+            "Ritish Venkat J is a Software Engineer with 7+ years of experience in Python, .NET, Angular, and ReactJS. He specializes in automating workflows, building AI-driven tools, and delivering data insights through Power BI, with a strong focus on innovation and high-impact solutions.",
+        },
+      ];
 
-  
-    const currentSpeakers = [
-      {
-        name: "Revealing Soon",
-        title: "",
-        description:""
-      }
-    ];
-
-   const previousSpeakers = [
-  {
-    name: "Lakshit Pant",
-    title: "Program Manager",
-    company: "Microsoft",
-    image: "https://dotnetconfamravati.blob.core.windows.net/website-images/lakshit%20pant.png",
-    description:
-      "Lakshit Pant contributes to building innovative cloud solutions and empowering communities through Microsoft programs."
-  },
-  {
-    name: "Aditya Saladi",
-    title: "Software Engineer 2 ",
-    company: "Microsoft",
-    image: "https://dotnetconfamravati.blob.core.windows.net/website-images/aditya%20saladi.png",
-    description:
-      "Aditya Saladi is a Software Engineer at Microsoft, focused on building scalable, reliable software and leading impactful enterprise projects globally."
-  },
-  {
-    name: "Anuraj P",
-    title: "Microsoft MVP| Senior Architect",
-    company: "Gadgeon Systems Inc.",
-    image: "https://dotnetconfamravati.blob.core.windows.net/website-images/anuraj%20p.png",
-    description:
-      "Anuraj Parameswaran is a Senior Architect at Gadgeon Systems Inc., specializing in designing scalable, secure, and resilient software solutions that drive innovation and align with business goals."
-  },
-  {
-    name: "Praffull",
-    title: "Co-founder| Developer| Trainer",
-    company: "SohamGlobal",
-    image: "https://dotnetconfamravati.blob.core.windows.net/website-images/prafull.png",
-    description:
-      "Praffull Wankhade is the Co-Founder of Soham Global, a Microsoft and AWS partner company with over 16 years of experience in software development, enterprise training, and technology innovation."
-  },
-  {
-    name: "Ritish Venkat J",
-    title: "Sr Full Stack & Data Engineer",
-    company: "Blend",
-    image: "https://dotnetconfamravati.blob.core.windows.net/website-images/ritish%20venkat%20j.png",
-    description:
-      "Ritish Venkat J is a Software Engineer with 7+ years of experience in Python, .NET, Angular, and ReactJS. He specializes in automating workflows, building AI-driven tools, and delivering data insights through Power BI, with a strong focus on innovation and high-impact solutions."
-  }
-];
-
-
-    // 🔧 FUNCTIONS
- function createSpeakerCard(speaker, isCurrent = false) {
-  if (isCurrent && speaker.name === "Revealing Soon") {
-    return `
+      // 🔧 FUNCTIONS
+      function createSpeakerCard(speaker, isCurrent = false) {
+        if (isCurrent && speaker.name === "Revealing Soon") {
+          return `
       <div class="speaker-card reveal-card">
         <div class="speaker-name">${speaker.name}</div>
       </div>
     `;
-  }
+        }
 
-  return `
+        return `
     <div class="speaker-card" onclick='openModal(${JSON.stringify(speaker)})'>
-      ${speaker.image ? `<img src="${speaker.image}" alt="${speaker.name}" class="speaker-image">` : ""}
+      ${
+        speaker.image
+          ? `<img src="${speaker.image}" alt="${speaker.name}" class="speaker-image">`
+          : ""
+      }
       <div class="speaker-name">${speaker.name}</div>
       <div class="speaker-title">${speaker.title}</div>
-      ${speaker.company ? `<div class="speaker-company">${speaker.company}</div>` : ""}
+      ${
+        speaker.company
+          ? `<div class="speaker-company">${speaker.company}</div>`
+          : ""
+      }
     </div>
   `;
-}
+      }
 
+      function openModal(speaker) {
+        const modal = document.getElementById("speakerModal");
+        document.getElementById("modalImage").src = speaker.image;
+        document.getElementById("modalName").textContent = speaker.name;
+        document.getElementById("modalTitle").textContent = speaker.title;
+        document.getElementById("modalDescription").textContent =
+          speaker.description;
+        modal.classList.add("active");
+      }
 
-    function openModal(speaker) {
-      const modal = document.getElementById("speakerModal");
-      document.getElementById("modalImage").src = speaker.image;
-      document.getElementById("modalName").textContent = speaker.name;
-      document.getElementById("modalTitle").textContent = speaker.title;
-      document.getElementById("modalDescription").textContent = speaker.description;
-      modal.classList.add("active");
-    }
+      function closeModal() {
+        document.getElementById("speakerModal").classList.remove("active");
+      }
 
-    function closeModal() {
-      document.getElementById("speakerModal").classList.remove("active");
-    }
+      document.getElementById("currentSpeakers").innerHTML = currentSpeakers
+        .map((s) => createSpeakerCard(s, true))
+        .join("");
+      document.getElementById("previousSpeakers").innerHTML = previousSpeakers
+        .map((s) => createSpeakerCard(s))
+        .join("");
 
-    document.getElementById("currentSpeakers").innerHTML = currentSpeakers.map(s => createSpeakerCard(s, true)).join("");
-    document.getElementById("previousSpeakers").innerHTML = previousSpeakers.map(s => createSpeakerCard(s)).join("");
-
-    document.getElementById("closeModal").addEventListener("click", closeModal);
-    document.getElementById("speakerModal").addEventListener("click", (e) => {
-      if (e.target.id === "speakerModal") closeModal();
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeModal();
-    });
-
-
-
-
-  </script>
+      document
+        .getElementById("closeModal")
+        .addEventListener("click", closeModal);
+      document.getElementById("speakerModal").addEventListener("click", (e) => {
+        if (e.target.id === "speakerModal") closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
 
     <script src="script.js"></script>
   </body>
